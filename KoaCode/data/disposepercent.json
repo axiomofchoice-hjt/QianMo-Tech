@@ -1,0 +1,41 @@
+[{
+    "name": "上城区",
+    "disposed": 99,
+    "undisposed":32
+}, {
+    "name": "下城区",
+    "disposed": 102,
+    "undisposed":343
+}, {
+    "name": "江干区",
+    "disposed": 83,
+    "undisposed":78
+}, {
+    "name": "拱墅区",
+    "disposed": 49,
+    "undisposed":54
+}, {
+    "name": "西湖区",
+    "disposed": 200,
+    "undisposed":57
+}, {
+    "name": "萧山区",
+    "disposed": 152,
+    "undisposed":89
+}, {
+    "name": "滨江区",
+    "disposed": 76,
+    "undisposed":56
+}, {
+    "name": "余杭区",
+    "disposed": 23,
+    "undisposed":23
+}, {
+    "name": "富阳区",
+    "disposed": 87,
+    "undisposed":8
+}, {
+    "name": "临安区",
+    "disposed": 223,
+    "undisposed":98
+}]
