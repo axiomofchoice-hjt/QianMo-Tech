@@ -36,7 +36,7 @@
 export default {
   data() {
     return {
-      QianMoWidth: "160px",
+      QianMoWidth: "200px",
       bgcolor: "#545c64",
     };
   },
