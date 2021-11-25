@@ -15,12 +15,6 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
-// ant-design-vue
-
-import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
-Vue.use(Antd);
-
 // video
 import VideoPlayer from 'vue-video-player';
 import 'vue-video-player/src/custom-theme.css';
