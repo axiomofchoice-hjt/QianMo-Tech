@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@liveqing/liveplayer": "^2.3.3",
+    "ant-design-vue": "^2.2.8",
     "axios": "^0.21.1",
     "bmap": "^1.0.1",
     "copy-webpack-plugin": "^4.6.0",

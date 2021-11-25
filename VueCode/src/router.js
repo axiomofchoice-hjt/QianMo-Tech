@@ -13,6 +13,7 @@ import AdminCamera from '@/components/AdminCamera.vue';
 import ScreenPage from '@/views/ScreenPage.vue';
 import UserPage from '@/views/UserPage';
 import AdminPage from '@/views/AdminPage';
+import HomeMobile from '@/views/HomeMobile'
 
 const originalPush = VueRouter.prototype.push;
 
@@ -23,6 +24,7 @@ VueRouter.prototype.push = function push(location) {
 export default new VueRouter({
   routes: [
     { path: "/", component: Home, },
+    { path: "/mobile", component: HomeMobile, },
     {
       path: "/user", component: UserPage,
       children: [
