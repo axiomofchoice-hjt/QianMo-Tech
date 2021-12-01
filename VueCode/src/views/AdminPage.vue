@@ -1,7 +1,7 @@
 <template>
   <el-scrollbar style="height: 100%">
-    <el-row type="flex" justify="center">
-      <el-col :xs="24" :sm="22" :md="21" :lg="20" :xl="16">
+    <el-row type="flex" justify="center" style="min-width: 960px; max-width: 2080px;">
+      <el-col :xs="24" :sm="24" :md="22" :lg="20" :xl="18">
         <el-container>
           <el-header>
             <x-header />
