@@ -54,7 +54,7 @@ export default {
 </script>
 <style scoped>
 .left-col {
-  height: 61px;
+  height: 60px;
   line-height: 60px;
   text-align: center;
   color: white;
