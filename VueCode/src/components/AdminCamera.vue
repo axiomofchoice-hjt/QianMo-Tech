@@ -75,6 +75,7 @@
       <el-col :span="16">
         <LivePlayer :videoUrl="videoUrl" ref="player" live style="margin: 20px 50px;"/>
         <div style="text-align: center; margin-top: 10px">{{cameraObject.cameraId}} {{cameraObject.address}}</div>
+        <div style="text-align: right; margin: 10px 50px;"><router-link to="/admin/camera-draw">画停车线</router-link></div>
       </el-col>
     </el-row>
   </div>

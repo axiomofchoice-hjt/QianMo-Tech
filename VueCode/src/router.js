@@ -10,6 +10,7 @@ import AdminRecord from '@/components/AdminRecord.vue';
 import AdminNewRecord from '@/components/AdminNewRecord.vue';
 import AdminCheckRecord from '@/components/AdminCheckRecord.vue';
 import AdminCamera from '@/components/AdminCamera.vue';
+import AdminDrawCamera from '@/components/AdminDrawCamera.vue';
 import ScreenPage from '@/views/ScreenPage.vue';
 import UserPage from '@/views/UserPage';
 import AdminPage from '@/views/AdminPage';
@@ -47,6 +48,7 @@ export default new VueRouter({
         { path: "camera", component: AdminCamera },
         { path: "camera/:partition/:pageindex/:cameraId", component: AdminCamera },
         { path: "record-edit/:serial", component: AdminNewRecord },
+        {path:"camera-draw", component: AdminDrawCamera},
       ]
     },
   ],
