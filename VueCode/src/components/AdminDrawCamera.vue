@@ -14,8 +14,8 @@
         @mouseleave="mouseleave"
       ></canvas>
     </div>
-    <div>
-      <el-button type="primary">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <el-button type="primary" :disabled="pos.length === 0">
         提交
       </el-button>
       <el-button

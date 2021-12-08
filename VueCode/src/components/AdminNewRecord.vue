@@ -84,7 +84,7 @@
           style="margin: 0 15px"
           >提交</el-button
         >
-        <el-button @click="$router.push('/admin/record')">取消</el-button>
+        <el-button @click="$router.go(-1)">取消</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -207,7 +207,7 @@ export default {
             console.log("add record ok");
           });
         }
-        this.$router.push("/admin/record");
+        this.$router.go(-1);
       });
     },
     // 分区改变的事件
