@@ -14,6 +14,23 @@
         @mouseleave="mouseleave"
       ></canvas>
     </div>
+    <div>
+      <el-button type="primary">
+        提交
+      </el-button>
+      <el-button
+        :disabled="pos.length === 0"
+        @click="
+          pos.splice(0, pos.length);
+          draw();
+        "
+        type="danger"
+        >清除停车线</el-button
+      >
+      <el-button @click="$router.go(-1)">
+        取消
+      </el-button>
+    </div>
   </div>
 </template>
 <script>
@@ -37,7 +54,14 @@ export default {
       ctx.clearRect(0, 0, this.w, this.h);
       if (this.pos.length == 2) {
         ctx.strokeStyle = "#FFF";
-        ctx.lineWidth = this.lineWidth;
+        ctx.lineCap = "square";
+        ctx.lineWidth = this.lineWidth + 1;
+        ctx.beginPath();
+        ctx.moveTo(this.pos[0][0], this.pos[0][1]);
+        ctx.lineTo(this.pos[1][0], this.pos[1][1]);
+        ctx.stroke();
+        ctx.strokeStyle = "#F00";
+        ctx.lineWidth = this.lineWidth - 1;
         ctx.beginPath();
         ctx.moveTo(this.pos[0][0], this.pos[0][1]);
         ctx.lineTo(this.pos[1][0], this.pos[1][1]);
