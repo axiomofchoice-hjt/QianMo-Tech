@@ -44,19 +44,17 @@
           <el-table-column prop="state" label="状态"> </el-table-column>
           <el-table-column label="操作" width="77">
             　　　　<template slot-scope="scope">
-            <template v-if="scope.row.cameraId !== cameraObject.cameraId">
-              　　　　　　<el-button
-                type="info"
-                @click="check(scope.row.cameraId)"
-                size="mini"
-                >查看</el-button
-              >
-            </template>
-            <template v-else>
-              <div style="text-align: center;">
-              查看中
-              </div>
-            </template>
+              <template v-if="scope.row.cameraId !== cameraObject.cameraId">
+                　　　　　　<el-button
+                  type="info"
+                  @click="check(scope.row.cameraId)"
+                  size="mini"
+                  >查看</el-button
+                >
+              </template>
+              <template v-else>
+                <div style="text-align: center">查看中</div>
+              </template>
               　　　　</template
             >
           </el-table-column>
@@ -73,19 +71,28 @@
         </div>
       </el-col>
       <el-col :span="16">
-        <LivePlayer :videoUrl="videoUrl" ref="player" live style="margin: 20px 50px;"/>
-        <div style="text-align: center; margin-top: 10px">{{cameraObject.cameraId}} {{cameraObject.address}}</div>
-        <div style="text-align: right; margin: 10px 50px;"><router-link to="/admin/camera-draw">画停车线</router-link></div>
+        <LivePlayer
+          :videoUrl="videoUrl"
+          ref="player"
+          live
+          style="margin: 20px 50px"
+        />
+        <div style="text-align: center; margin-top: 10px">
+          {{ cameraObject.cameraId }} {{ cameraObject.address }}
+        </div>
+        <div style="text-align: right; margin: 10px 50px;">
+          <el-link href="#/admin/camera-draw" type="primary" icon="el-icon-edit" style="font-size: 18px;">画停车线</el-link>
+        </div>
       </el-col>
     </el-row>
   </div>
 </template>
 <script>
 import tools from "@/tools";
-import LivePlayer from '@liveqing/liveplayer'
+import LivePlayer from "@liveqing/liveplayer";
 export default {
   components: {
-      LivePlayer
+    LivePlayer,
   },
   data() {
     return {
@@ -99,24 +106,30 @@ export default {
       cameraList: [],
       cameraObject: {
         cameraId: "",
-        address: ""
+        address: "",
       },
       partitionList: [],
       querying: false,
-      videoUrl: '',
+      videoUrl: "",
     };
   },
   methods: {
     check(cameraId) {
       console.log(cameraId);
-      this.$router.push(`/admin/camera/${this.filter.partition}/${this.pageindex}/${cameraId}`);
+      this.$router.push(
+        `/admin/camera/${this.filter.partition}/${this.pageindex}/${cameraId}`
+      );
     },
     filterChange() {
       // console.log(this.filter.time);
-      this.$router.push(`/admin/camera/${this.filter.partition}/1/${this.cameraObject.cameraId}`);
+      this.$router.push(
+        `/admin/camera/${this.filter.partition}/1/${this.cameraObject.cameraId}`
+      );
     },
     changepageindex(pageindex) {
-      this.$router.push(`/admin/camera/${this.filter.partition}/${pageindex}/${this.cameraObject.cameraId}`);
+      this.$router.push(
+        `/admin/camera/${this.filter.partition}/${pageindex}/${this.cameraObject.cameraId}`
+      );
     },
     init() {
       this.query();
@@ -149,14 +162,14 @@ export default {
       );
       this.realpageindex = this.pageindex;
       if (typeof this.$route.params.cameraId === "string") {
-        for (let i of this.allCameralist) if (i.cameraId === this.$route.params.cameraId) this.cameraObject = i;
+        for (let i of this.allCameralist)
+          if (i.cameraId === this.$route.params.cameraId) this.cameraObject = i;
       } else {
         this.cameraObject = this.allCameralist[0];
       }
-      if (this.cameraObject.cameraId === 'JM20211103001')
+      if (this.cameraObject.cameraId === "JM20211103001")
         this.videoUrl = "video.mp4";
-      else
-        this.videoUrl = '';
+      else this.videoUrl = "";
     },
     query() {
       tools.getCameraList(this.$http, (list) => {
