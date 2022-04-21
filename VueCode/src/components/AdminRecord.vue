@@ -59,7 +59,8 @@
                 v-for="item in tools.statesName"
                 :key="item"
                 :label="item"
-              ></el-radio-button>
+              >
+              </el-radio-button>
             </el-radio-group>
           </el-form-item>
           <el-form-item label="对违法类型筛选：">
@@ -73,7 +74,8 @@
                 v-for="item in tools.illegalName"
                 :key="item"
                 :label="item"
-              ></el-radio-button>
+              >
+              </el-radio-button>
             </el-radio-group>
           </el-form-item>
         </el-form>
@@ -101,11 +103,10 @@
             >查看</el-button
           >
           <template>
-            <el-popconfirm title="删除这条记录？" @confirm="del(scope.row.serial)"
-              ><el-button
-                type="danger"
-                size="mini"
-                slot="reference"
+            <el-popconfirm
+              title="删除这条记录？"
+              @confirm="del(scope.row.serial)"
+              ><el-button type="danger" size="mini" slot="reference"
                 >删除</el-button
               >
             </el-popconfirm>
